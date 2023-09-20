@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Регистрация пользователя</title>
+  <link type="text/css" href="../static/css/event_css.css" rel="stylesheet" th:href="@{/css/event_css.css}"/>
+</head>
+<body>
+<div th:if="${message}">
+  Пользователь уже существует
+</div>
+<div class="wrapper_aut">
+  <div class="map">
+<form th:action="@{/registration}" method="post">
+  <div><label> Логин : <input type="text" name="username"/> </label></div>
+  <div><label> Пароль : <input type="password" name="password"/> </label></div>
+  <div><input type="submit" value="Регистрация"/></div>
+</form>
+  </div>
+</div>
+</body>
+</html>

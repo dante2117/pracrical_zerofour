@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="../static/css/event_css.css" rel="stylesheet" th:href="@{/css/event_css.css}"/>
+</head>
+<body>
+<div class="wrapper_aut">
+    <div class="map">
+  <h1 th:text="'Пользователь : ' + ${user_object.username}"></h1>
+  <div class="container">
+    <h2 th:text="'Роли : ' + ${user_object.roles}"></h2>
+    <p th:text="${user_object.active} == True ? 'Пользователь: Активный' : 'Пользователь: Неактивный'"></p>
+  </div>
+  <a th:href="'/admin/' + ${user_object.ID_User} + '/update'"
+     class="btn btn-warning">Редактировать</a>
+        <br/>
+  <a href="/admin/users" style="border-radius: 10px;
+    background-color: #cf9b8f;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;" type="submit">Назад</a>
+</div>
+</div>
+</body>
+</html>

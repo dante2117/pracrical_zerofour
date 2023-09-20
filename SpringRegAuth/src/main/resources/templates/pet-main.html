@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Питомцы</title>
+  <link type="text/css" href="../static/css/event_css.css" rel="stylesheet" th:href="@{/css/event_css.css}"/>
+</head>
+<body>
+
+<div class="header">
+  <div class="wrapper">
+    <div class="attic">
+      <ul class="nav">
+        <li><a href="/admin/users" >Администрация</a></li>
+        <li><a href="/veterinarian">Ветеринары</a></li>
+        <li><a href="/clinic">Клиники</a></li>
+        <li><a href="/equipment">Оборудование</a></li>
+        <li><a href="/vet/passport">Паспорта</a></li>
+        <li><a href="/vet/pet">Питомцы</a></li>
+        <li><a href="/vet/post">Должности</a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="style">
+
+  <h2 >Питомцы</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Тип</th>
+      <th>Возраст</th>
+      <th>Изменить</th>
+      <th>Удалить</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pet : ${pets}">
+      <td th:text="${pet.name}"></td>
+      <td th:text="${pet.type}"></td>
+      <td th:text="${pet.age}"></td>
+
+      <td><a th:href="'/vet/pet/' + ${pet.id} + '/edit'" class="edit">Редактировать</a></td>
+      <td><a th:href="'/vet/pet/' + ${pet.id} + '/remove'" class="delete">Удалить</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<center><a href="/vet/pet/add" >Создать</a></center>
+
+<p th:text="${login}"></p>
+<form th:action="@{/logout}" method="post">
+  <button style="border-radius: 10px;
+    background-color: #cf9b8f;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;" type="submit">Выйти</button>
+</form>
+
+</body>
+</html>

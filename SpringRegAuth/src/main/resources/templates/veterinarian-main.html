@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ветеринары</title>
+    <link type="text/css" href="../static/css/event_css.css" rel="stylesheet" th:href="@{/css/event_css.css}"/>
+</head>
+<body>
+
+<div class="header">
+    <div class="wrapper">
+        <div class="attic">
+            <ul class="nav">
+                 <li><a href="/admin/users" >Администрация</a></li>
+                <li><a href="/veterinarian">Ветеринары</a></li>
+                <li><a href="/clinic">Клиники</a></li>
+                <li><a href="/equipment">Оборудование</a></li>
+                <li><a href="/passport">Паспорта</a></li>
+                <li><a href="/pet">Питомцы</a></li>
+                <li><a href="/post">Должности</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="style">
+
+                    <h2 >Ветеринары</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>Должность</th>
+                            <th>Опыт</th>
+                            <th>Изменить</th>
+                            <th>Удалить</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="veterinarian : ${veterinarians}">
+                            <td th:text="${veterinarian.name}"></td>
+                            <td th:text="${veterinarian.experience}"></td>
+                            <td>
+                                <div th:each="post : ${veterinarian.getPost()}">
+                                    <p th:text="${post.getNamePost()}"/>
+                                </div>
+                            </td>
+                            <td><a th:href="'/vet/veterinarian/' + ${veterinarian.id} + '/edit'" class="edit">Редактировать</a></td>
+                            <td><a th:href="'/vet/veterinarian/' + ${veterinarian.id} + '/remove'" class="delete">Удалить</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+<center><a href="/vet/veterinarian/add" >Создать</a></center>
+
+<p th:text="${login}"></p>
+<form th:action="@{/logout}" method="post">
+    <button style="border-radius: 10px;
+    background-color: #cf9b8f;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;" type="submit">Выйти</button>
+</form>
+
+</body>
+</html>

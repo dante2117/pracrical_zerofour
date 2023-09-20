@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="../static/css/event_css.css" rel="stylesheet" th:href="@{/css/event_css.css}"/>
+</head>
+<body class="body">
+
+<div class="style">
+    <table >
+        <tr>
+            <th>Логин</th>
+            <th>Роли</th>
+            <th>Подробности</th>
+        </tr>
+        <tr th:each="el : ${user_list}">
+            <td th:text="${el.username}"></td>
+            <td>
+                <div th:each="role : ${el.roles}">
+                    <p th:text="${role}"></p>
+                </div>
+            </td>
+            <td>
+                <a th:href="'/admin/'+${el.ID_User}">О пользователе</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/veterinarian" style="border-radius: 10px;
+    background-color: #cf9b8f;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;" type="submit">Назад</a>
+</div>
+</body>
+</html>

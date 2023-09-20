@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link type="text/css" href="../static/css/event_css.css" rel="stylesheet" th:href="@{/css/event_css.css}"/>
+</head>
+<body>
+<div class="wrapper_aut">
+  <div class="map">
+  <form method="post" >
+    <div>
+      <input type="text" th:value="${user_object.username}" name="username">
+    </div>
+    <div th:each="role : ${roles}">
+      <input type="checkbox" th:id="${role}"
+             th:name="${'roles[]'}" th:value="${role}"
+             th:checked="${#lists.contains(user_object.roles,role)}">
+
+      <label th:text="${role}"></label>
+    </div>
+    <button class="btn btn-success" type="submit">Изменить пользователя</button>
+  </form>
+
+  <a style="border-radius: 10px;
+    background-color: #cf9b8f;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;" type="submit" th:href="'/admin/' + ${user_object.ID_User}">Назад</a>
+</div>
+</div>
+</body>
+</html>

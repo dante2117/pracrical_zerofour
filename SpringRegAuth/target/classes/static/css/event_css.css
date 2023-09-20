@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.attic
+{
+    margin-top: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header {
+    background-color: #cf9b8f;
+    color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: right;
+    padding-left: 0;
+    font-weight: 700;
+}
+button {
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav li {
+
+    margin-left: 20px;
+
+}
+
+.nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.
+
+
+.style {
+    background-color: #FFFFFF;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #cf9b8f;
+    border-radius: 10px;
+
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #000C32;
+
+}
+
+th {
+    font-weight: bold;
+}
+
+
+
+.add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000C32;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+.wrapper_aut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.map {
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.map img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.right {
+    margin-left: 40px;
+}
+
+.right p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.right label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.right input[type="text"],
+.right input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #CED4DE;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.right a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #cf9b8f;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.right a:hover {
+    background-color: #0056b3;
+}

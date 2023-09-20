@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый ветеринар</title>
+    <link type="text/css" href="../static/css/event_css.css" rel="stylesheet" th:href="@{/css/event_css.css}"/>
+</head>
+<body>
+<div class="wrapper_aut">
+    <div class="map">
+        <form th:action="${'/vet/veterinarian/add'}" method="post" th:object="${veterinarians}">
+            <div class="row">
+                <div>
+                    <label for="name">Имя</label>
+                    <input type="text" th:field="*{name}" id="name" placeholder="Имя">
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                </div>
+                <label for="name">Должность</label>
+
+                <select  name="namePost">
+                    <div th:each="post : ${post}">
+                        <option th:text="${post.namePost}"></option>
+                    </div>
+                </select>
+
+                <div>
+                    <label for="experience">Опыт</label>
+                    <input type="text" th:field="*{experience}" id="experience" placeholder="Опыт">
+                    <span th:if="${#fields.hasErrors('experience')}" th:errors="*{experience}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <input type="submit" value="Добавить ветеринара">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
